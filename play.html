@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poke'Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Monofett&family=Press+Start+2P&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="start">
+       <h3>Enter your name:</h3>
+       <input type="text" id="name">
+       <button id="namebtn" onclick="nameIntake()">Enter</button>
+       <p id="n1"></p>
+       <h3>Select your Pokemons!</h3>
+       <div><input type="text" id="p1">
+        <button class="l" onclick=""  id="bt1">Lock</button><p id="ch1"></p></div>
+       <div><input type="text" id="p2">
+        <button class="l" onclick="" id="bt2">Lock</button><p id="ch2"></p></div>
+       <div><input type="text" id="p3">
+        <button class="l" onclick="" id="bt3">Lock</button><p id="ch3"></p></div>
+       <div><input type="text" id="p4">
+        <button class="l" onclick="" id="bt4">Lock</button><p id="ch4"></p></div>
+       <div><input type="text" id="p5">
+        <button class="l" onclick="" id="bt5">Lock</button><p id="ch5"></p></div>
+       <div><input type="text" id="p6">
+        <button class="l" onclick="" id="bt6">Lock</button><p id="ch6"></p></div>
+       <button id="proceed" onclick="proceed()">Submit</button>
+    </div>
+    <div id="gameWindow">
+      <div id="compWindow" class="windowBox">
+          <h3 id="cs">System chooses:</h3>
+          <div id="imageBoxcomp"><img src="" id="compPokemonThumb"></div>         
+          <div id="compInfo">
+          <p id="cd">Defense:</p>
+          <p id="ca">Attack:</p>
+          <p id="csa">Special Attack:</p>
+          </div>
+      </div>
+      <div id="scoreStatus" class="windowBox">
+          <h1 id="winnerStatus">Let the battle begin!</h1>
+          <h3 id="levelStatus">Level 1</h3>
+          <p id="compScore">System score:</p>
+          <p id="userScore">User score:</p>
+          <div><button id="startGame">Start Battle</button></div>
+          <div><button id="proc">Proceed</button></div>
+      </div>
+      <div id="userWindow" class="windowBox">
+          <h3 id="UserName">User chooses:</h3>        
+          <div id="imageBoxuser"><img src="" id="userPokemonThumb"></div>
+          <div id="userInfo">
+              <p id="ud">Defense:</p>
+              <p id="ua">Attack:</p>
+              <p id="usa">Special Attack:</p>
+          </div>
+          <button id="inventory" onclick="checkInventory()">Inventory</button>
+          <button id="choose" onclick="">Choose your Pokemon!</button>
+      </div>
+  </div>
+
+   <!-- Modal for Inventory -->
+   <div id="inventoryModal" class="modal">
+    <div class="modal-content">
+        <span class="close inventory-close">&times;</span> <!-- Unique class for Inventory modal's close button -->
+        <h3>Your Pokémon</h3>
+        <div class="pokemonCard">
+            <img src="" id="Pokémon1">
+            <div class="pokemonInfo">
+                <p id="pkn1">Name: </p>
+                <p id="pkd1">Defense: 0</p>
+                <p id="pka1">Attack: 0</p>
+            </div>
+        </div>
+        <div class="pokemonCard">
+            <img src="" id="Pokémon2">
+            <div class="pokemonInfo">
+                <p id="pkn2">Name: </p>
+                <p id="pkd2">Defense: 0</p>
+                <p id="pka2">Attack: 0</p>
+            </div>
+        </div>
+        <div class="pokemonCard">
+            <img src="" id="Pokémon3">
+            <div class="pokemonInfo">
+                <p id="pkn3">Name: </p>
+                <p id="pkd3">Defense: 0</p>
+                <p id="pka3">Attack: 0</p>
+            </div>
+        </div>
+        <div class="pokemonCard">
+            <img src="" id="Pokémon4">
+            <div class="pokemonInfo">
+                <p id="pkn4">Name: </p>
+                <p id="pkd4">Defense: 0</p>
+                <p id="pka4">Attack: 0</p>
+            </div>
+        </div>
+        <div class="pokemonCard">
+            <img src="" id="Pokémon5">
+            <div class="pokemonInfo">
+                <p id="pkn5">Name: </p>
+                <p id="pkd5">Defense: 0</p>
+                <p id="pka5">Attack: 0</p>
+            </div>
+        </div>
+        <div class="pokemonCard">
+            <img src="" id="Pokémon6">
+            <div class="pokemonInfo">
+                <p id="pkn6">Name: </p>
+                <p id="pkd6">Defense: 0</p>
+                <p id="pka6">Attack: 0</p>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+
+    <!-- Modal for Choosing Pokémon -->
+    <div id="choosePokemonModal" class="modal">
+        <div class="modal-content">
+            <span class="close choose-close">&times;</span> <!-- Unique class for Choose Pokémon modal's close button -->
+            <h3>Choose Your Pokémon</h3>
+            <h5>(Click on the pokemon image)</h5>
+            <div id="pokemonCardBox1">
+                <img src="" id="Pokémon_1" >
+            </div>
+            <div id="pokemonCardBox2">
+                <img src="" id="Pokémon_2" >
+            </div>
+            <div id="pokemonCardBox3">
+                <img src="" id="Pokémon_3" >
+            </div>
+            <div id="pokemonCardBox4">
+                <img src="" id="Pokémon_4">
+            </div>
+            <div id="pokemonCardBox5">
+                <img src="" id="Pokémon_5" >
+            </div>
+            <div id="pokemonCardBox6">
+                <img src="" id="Pokémon_6">
+            </div>
+            <div id="pokemonCardButton" style="display: none;">
+                <button id="chosen">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="FinalWinnerWindow">
+        <div id="finalUser">User's final score:</div>
+        <div id="finalComp">System's final score:</div>
+        <div id="imageContainerFinal">
+            <img src="" id="finalImg">
+        </div>
+        <h1 id="finalVerdictStatement"></h1>
+        
+        <div id="FinalWinners">
+            <table id="finalScoreTable">
+                <tr>
+                    <td></td>
+                    <td id="r1c2">Round 1</td>
+                    <td id="r1c3">Round 2</td>
+                    <td id="r1c4">Round 3</td>
+                    <td id="r1c5">Total</td>
+                </tr>
+                <tr>
+                    <td id="r2c1">User scores</td>
+                    <td id="r2c2">--</td>
+                    <td id="r2c3">--</td>
+                    <td id="r2c4">--</td>
+                    <td id="r2c5">--</td>
+                </tr>
+                <tr>
+                    <td id="r3c1">System scores</td>
+                    <td id="r3c2">--</td>
+                    <td id="r3c3">--</td>
+                    <td id="r3c4">--</td>
+                    <td id="r3c5">--</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+  
+
+    <footer>
+        <div id="footerDiv">Created by - Ameya Nimkar</div>
+     </footer>
+  
+    <script src="script.js"></script>
+</body>
+</html>

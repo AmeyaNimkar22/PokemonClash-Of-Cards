@@ -1,0 +1,233 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "VT323", monospace;
+    background-image: url(bg.jpg);
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    height: 100vh; 
+    
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    margin: 90px;
+    border: 1px black outset;
+    flex-direction: row; /* Change from column to row to align boxes horizontally */
+    background-color:white;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 10px; /* Add some space between the boxes */
+    align-items: center;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+#box2 ,#box1,#box3 {
+    text-align: center;
+    padding: 15px;
+}
+#proc{
+    display: none;
+    align-items: center;
+}
+.btn ,#proceed ,.l  ,#namebtn ,#inventory ,#startGame ,#choose ,#chosen ,#proc{
+    font-family: "VT323", monospace;
+    padding: 15px 10px;
+    margin: 15px;
+    width: 100px;
+    font-size: 17px;
+    border: none;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: rgb(236, 15, 15);
+    color: white;
+    border: 1px black outset;
+}
+
+.btn:hover ,#proceed:hover , .l:hover #namebtn:hover{
+    background-color: brown;
+}
+
+.btn:active ,#proceed:active ,.l:active ,#namebtn:active{
+    background-color: rgb(134, 6, 6);
+}
+
+.t {
+    width: 300px; /* Adjusted width for better visibility */
+    height: fit-content;
+}
+#inst_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    margin: 90px;
+    border: 1px black outset;
+    flex-direction: column;
+    background-color:white;
+    font-size: 25px;
+    text-align: center;
+}
+#start{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    margin: 90px;
+    border: 1px black outset;
+    flex-direction: column; /* Change from column to row to align boxes horizontally */
+    background-color:white;
+    font-size: 20px;
+}
+#name ,#p1,#p2,#p3,#p4,#p5,#p6{
+    padding: 12px;
+    border-radius: 30px;
+}
+#gameWindow {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    margin: 90px;
+    border: 1px black outset;
+    flex-direction: row;
+    background-color: white;
+    font-size: 20px;
+}
+#FinalWinnerWindow {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Keep this as column */
+    padding: 15px;
+    margin: 90px;
+    border: 1px black outset;
+    background-color: white;
+    font-size: 20px;   
+}
+
+#finalUser, #finalComp, #FinalWinners {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 10px 0; /* Add some margin for spacing */
+}
+
+#finalVerdictStatement {
+    margin: 20px 0; /* Add some margin for spacing */
+}
+#finalScoreTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; /* Adds some space above the table */
+}
+
+#finalScoreTable td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+h1{
+    color: darkblue;
+}
+.windowBox {
+    width: 33.3%;
+    padding: 20px;
+    text-align: center;
+    
+    border-radius: 10px;
+    background-color: #f9f9f9; /* Optional: to give a slight background color */
+}
+#scoreStatus{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: yellow;
+}
+#userWindow, #compWindow, #scoreStatus {
+
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1); /* Optional: for a subtle shadow */
+}
+
+#userWindow img, #compWindow img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+/* Modal Styles */
+.modal ,.pmodal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
+    font-size: 2rem;
+}
+
+.modal-content , .pmodal-content{
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Width of the modal */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    font-size: 1.5rem;
+}
+
+.close  , .pclose{
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus ,
+.pclose:hover,
+.pclose:focus{
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    
+}
+#userPokemonThumb , #compPokemonThumb{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    
+}
+#imageBoxuser ,#imageBoxcomp{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+#footerDiv{
+    text-align: center;
+    background-color: red;
+    color: white;
+    padding: 30px;
+    position:absolute;
+    width: 100%;
+}
+#finalImg{
+    width: 200px;
+}
